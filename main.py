@@ -274,8 +274,18 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
                 
         if self.Type_SC == 1 :
             pylab.title('Intrinsic Material')
+            print 'Plot is shown\
+    \nEc       : Blue\
+    \nEv       : Brown trianlgle\
+    \nEi       : Majanta'
         else :
             pylab.title('Extrinsic Material')
+            print 'Plot is shown\
+    \nEc          : Blue\
+    \nEv          : Brown trianlgle\
+    \nEi          : Majanta\
+    \nDonor level : yellow\
+    \nFermilevel  : dots'
             
         pylab.plot(x_axis, Ec_axis, linewidth=1.0)
         pylab.plot(x_axis, Default_axis)

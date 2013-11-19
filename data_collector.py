@@ -70,4 +70,6 @@ class Ui_MainWindow(object):
         self.err_lbl.setText(QtGui.QApplication.translate("MainWindow", "TextLabel", None, QtGui.QApplication.UnicodeUTF8))
         self.lbl.setText(QtGui.QApplication.translate("MainWindow", "x 10 ^", None, QtGui.QApplication.UnicodeUTF8))
         self.plotBtn.setText(QtGui.QApplication.translate("MainWindow", "plot", None, QtGui.QApplication.UnicodeUTF8))
+        
+        #chumma oru comment
 

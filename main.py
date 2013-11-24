@@ -321,12 +321,18 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
             if self.Con_Nd > self.Con_Na :
                 Con_N = ((self.Con_Nd - self.Con_Na)/2.0) + pow((( (self.Con_Intr*self.Con_Intr) + pow(((self.Con_Nd - self.Con_Na)/2.0),2))),0.5)
                 Con_P = (self.Con_Intr*self.Con_Intr)/Con_N
-            if self.Con_Nd < self.Con_Na :
+            elif self.Con_Nd < self.Con_Na :
                 Con_P = ((self.Con_Na - self.Con_Nd)/2.0) + pow((( (self.Con_Intr*self.Con_Intr) + pow(((self.Con_Na - self.Con_Nd)/2.0),2))),0.5)
                 Con_N = (self.Con_Intr*self.Con_Intr)/Con_P
+            else :
+                Con_P = pow(10, 10)
+                Con_N = pow(10, 10)
             # Under Equilibrium Condition
             #Finding the values for Fermi level
-            self.Fermi_Level = self.Intr_Ei + 0.026 * ( math.log( Con_N / self.Con_Intr ))
+            if self.Con_Nd == self.Con_Na :
+                self.Fermi_Level = self.Intr_Ei
+            else :
+                self.Fermi_Level = self.Intr_Ei + 0.026 * ( math.log( Con_N / self.Con_Intr ))
             
         if self.Type_SC == 1:#Plotting for Intrinsic Material
             str1 =  """            

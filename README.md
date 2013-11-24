@@ -2,6 +2,6 @@ VPoSD
 =====
 
 MTech Project
-This is a verum test project..
+This is a test project..
 
 
